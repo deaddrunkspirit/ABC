@@ -1,3 +1,11 @@
+; Variant 16
+; Get an array from user and create another array
+; with elements that are greater than
+; average value of the first array.
+; Then output in console both arrays
+;
+
+
 format PE console
 entry start
 
@@ -70,13 +78,21 @@ VectorInput:
 
         mov eax, [vec_sizeA]
         cmp eax, 0
-        jg  getVector
-; fail size
+        jg getVector
+        jne invalidInput
         push vec_sizeA
         push strIncorSize
         call [printf]
         push 0
         call [ExitProcess]
+invalidInput:
+        ; message if size is incorrect
+        push eax
+        push strIncorSize
+        call [printf]
+        add esp, 8
+        jmp start
+        ret
 ; else continue...
 getVector:
         xor ecx, ecx            ; ecx = 0
