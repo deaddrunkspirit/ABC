@@ -16,7 +16,7 @@ section '.data' data readable writable
 ;--------------------------------------------------------------------------
 section '.code' code readable executable
 start:
-        jmp Count
+        jmp CountCullenNumbers
 finish:
         call [getch]
 
@@ -36,7 +36,7 @@ Output:
         add esp, 8
         jmp finish
 ;--------------------------------------------------------------------------
-Count:
+CountCullenNumbers:
         ; i++
         mov eax, [i]
         inc eax
@@ -52,11 +52,7 @@ Count:
         cmp eax, [prevCullen]
         jl Output
         mov [prevCullen], eax
-        jmp Count
-
-
-
-
+        jmp CountCullenNumbers
 ;-------------------------------third act - including HeapApi--------------------------
                                                  
 section '.idata' import data readable
