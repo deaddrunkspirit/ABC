@@ -1,0 +1,3 @@
+C:/Users/deaddrunkspirit/Desktop/Architecture/GitHub/ABC/task03/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/deaddrunkspirit/Desktop/Architecture/GitHub/ABC/task03/cmake-build-debug/CMakeFiles/task03.dir
+C:/Users/deaddrunkspirit/Desktop/Architecture/GitHub/ABC/task03/cmake-build-debug/CMakeFiles/edit_cache.dir

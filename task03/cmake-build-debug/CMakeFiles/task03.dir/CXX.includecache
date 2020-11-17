@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/deaddrunkspirit/Desktop/Architecture/GitHub/ABC/task03/main.cpp
+iostream
+-
+vector
+-
+string
+-
+fstream
+-
+thread
+-
+mutex
+-
+
