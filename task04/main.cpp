@@ -9,6 +9,7 @@
 using namespace std;
 
 int m, n, k, taskCount = 0;
+
 /**
  * Variable to set book ids
  * Increments after every book counted;
@@ -50,6 +51,7 @@ void task() {
         }
     }
 }
+
 /**
  * This method reads a text file and returns a vector of m, n, k string values
  */
