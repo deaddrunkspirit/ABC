@@ -9,6 +9,7 @@
 using namespace std;
 
 int m, n, k, taskCount = 0;
+int threadCount;
 
 /**
  * Variable to set book ids
@@ -67,14 +68,15 @@ vector<string> getArguments(ifstream &in) {
 
 int main(int argc, char** argv) {
     // Check if there are invalid arguments in command prompt
-    if (argc != 3) {
-        cout << "Command prompt arguments are class path, input file path "
-                "and output file path\nThree and only three arguments allowed";
+    if (argc != 4) {
+        cout << "Command prompt arguments are class path, input file path, "
+                "output file path and count of threads\nThree and only four arguments allowed";
         return -1;
     }
     ifstream in;
     ofstream out;
     in.open(argv[1]);
+    threadCount = argv[3]
     vector<string> args = getArguments(in);
     in.close();
     m = stoi(args[0]);
@@ -99,8 +101,8 @@ int main(int argc, char** argv) {
     catalog.reserve(m * n * k);
     out.open(argv[2]);
     // run in 4 parallel threads all rows and write Book info to output file
-#pragma omp parallel for num_threads(4)
-    for (int i = 0; i < 4; ++i) task();
+#pragma omp parallel for num_threads(threadCount)
+    for (int i = 0; i < threadCount; ++i) task();
     sort(catalog.begin(), catalog.end());
     out << "Books count: " << size(catalog) << endl;
     for (auto const &line: catalog) {
